@@ -96,10 +96,9 @@ inquirer
   <meta charset="UTF-8">
   <title>About Me</title>
   <!--Used Bootstrap Styling-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+
+
 <style>
 
 body {
@@ -107,7 +106,7 @@ body {
         -webkit-print-color-adjust: exact !important;
           }
 
-h1 {
+.a {
 
 color: white;
 text-align: center;
@@ -117,6 +116,7 @@ text-align: center;
 p {
 
 color: white;
+margin: 20px;
 
 }
 
@@ -125,6 +125,15 @@ a {
 color: white;
 
 }
+
+.infoBlock{
+
+background-color: #000000;
+padding: 20px;
+
+
+}
+
 </style>
 
 </head>
@@ -133,8 +142,13 @@ color: white;
 
 <!--Body-->
   <div class="container">
+  <div class="a">
     <h1>About Me</h1>
+   </div> 
+    <div class="row justify-content-center photo">
     <img src="${feedback.avatar}">
+    </div>
+    <div class="infoBlock">    
     <p>Username: ${feedback.name}</p>
     <p>Location: ${feedback.location}</p>
     <p>Profile Link:<a href="https://github.com/bialoorlem"> ${feedback.profile} </a></p>
@@ -144,26 +158,10 @@ color: white;
     <p>Followers: ${feedback.followers}</p>
     <p>Following: ${feedback.following}</p>
     <p>Stars:<a href="https://api.github.com/users/bialoorlem/starred{/owner}{/repo}"> ${feedback.stars} </a></p>
-
-    <div>
-      <hr class="hr">
     </div>
-
-  <!--Footer-->
-<footer class=“footer”>
-   © 2019 Copyrights
- </footer>
 
 </body>
 
-
-<!--Used Bootstrap Javascript-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-  crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
 
 </html>`;
 
