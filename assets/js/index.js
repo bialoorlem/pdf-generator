@@ -141,13 +141,13 @@ let html = `<!DOCTYPE html>
     <p>Username: ${feedback.name}</p>
     <img src="${feedback.avatar}">
     <p>Location: ${feedback.location}</p>
-    <p>Profile Link: ${feedback.profile}</p>
-    <p>Blog Link: ${feedback.blog}</p>
-    <p>Bio Link: ${feedback.bio}</p>
+    <p>Profile Link:<a href="https://github.com/bialoorlem"> ${feedback.profile} </a></p>
+    <p>Blog Link:<a href="https://bialoorlem.github.io/portfolio/index.html"> ${feedback.blog} </a></p>
+    <p>Bio: ${feedback.bio}</p>
     <p>Repos: ${feedback.repos}</p>
     <p>Followers: ${feedback.followers}</p>
     <p>Following: ${feedback.following}</p>
-    <p>Stars: ${feedback.stars}</p>
+    <p>Stars:<a href="https://api.github.com/users/bialoorlem/starred{/owner}{/repo}"> ${feedback.stars} </a></p>
 
     <div>
       <hr class="hr">
