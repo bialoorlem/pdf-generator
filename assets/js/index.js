@@ -79,9 +79,9 @@ axios.get(queryUrl).then(function(response){
 //   feedback.bgColor='blue';
   console.log(feedback);
 
-//https://www.npmjs.com/package/html-pdf
+//Used the NPM from: https://www.npmjs.com/package/html-pdf
 
-//Need to update the data points in let html
+
 
 
 
