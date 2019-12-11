@@ -100,45 +100,20 @@ inquirer
     crossorigin="anonymous">
 
   <link rel="stylesheet" href="assets/css/style.css">
+<style>
 
+p {
+
+font: Times New Roman;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!--Header-->
-
-  <header class="row">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <h2>Elliot Trejo</h2>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <div class="col-sm-6 ml-5">
-            </div>
-            <div class="col-sm-1.5 ml-5">
-              <li class="navli">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-            </div>
-            <div class="col-sm-1.5 ml-5">
-              <li class="navli">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </div>
-            <div class="col-sm-1.5 ml-5">
-              <li class="navli">
-                <a class="nav-link" href="portfolio.html">Portfolio</a>
-              </li>
-            </div>
-          </ul>
-      </nav>
-      </div>
-  </header>
 <!--Body-->
   <div class="container">
     <h1>About Me</h1>
