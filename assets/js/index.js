@@ -1,9 +1,9 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-const PDFDocument = require('pdfkit');
-const doc = new PDFDocument;
-const pdf = require('html-pdf');
+const PDFDocument = require("pdfkit");
+const doc = new PDFDocument();
+const pdf = require("html-pdf");
 
 const colors = {
   green: {
@@ -32,27 +32,36 @@ const colors = {
   }
 };
 
-
-const options = { format: 'Letter' };
+const options = { format: "Letter" };
 
 let feedback = {
-    avatar: '',
-    name: '',
-    location: '',
-    profile: '',
-    blog: '',
-    bio: '',
-    repos: '',
-    followers: '',
-    following: '',
-    stars: '',
-    // bgColor: '',
+  avatar: "",
+  name: "",
+  location: "",
+  profile: "",
+  blog: "",
+  bio: "",
+  repos: "",
+  followers: "",
+  following: "",
+  stars: ""
+  // bgColor: '',
+};
 
-
+config = {
+  footer: {
+    height: "28mm",
+    contents: {
+      first: "Cover page",
+      2: "Second page", // Any page number is working. 1-based index
+      default:
+        '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
+      last: "Last Page"
+    }
+  }
 };
 
 ///Activites 23 and 24 from section 9 for learning how to dynamically generate the HTML onto the website
-
 
 inquirer
   .prompt({
@@ -62,30 +71,25 @@ inquirer
   .then(function({ username }) {
     const queryUrl = `https://api.github.com/users/${username}`;
 
-axios.get(queryUrl).then(function(response){
-  const repoNames = response.data.avatar_url;
+    axios.get(queryUrl).then(function(response) {
+      const repoNames = response.data.avatar_url;
 
+      feedback.avatar = response.data.avatar_url;
+      feedback.name = response.data.login;
+      feedback.location = response.data.location;
+      feedback.profile = response.data.html_url;
+      feedback.blog = response.data.blog;
+      feedback.bio = response.data.bio;
+      feedback.repos = response.data.public_repos;
+      feedback.followers = response.data.followers;
+      feedback.following = response.data.following;
+      feedback.stars = response.data.starred_url;
+      //   feedback.bgColor='blue';
+      console.log(feedback);
 
-  feedback.avatar=response.data.avatar_url;
-  feedback.name=response.data.login;
-  feedback.location=response.data.location;
-  feedback.profile=response.data.html_url;
-  feedback.blog=response.data.blog;
-  feedback.bio=response.data.bio;
-  feedback.repos=response.data.public_repos;
-  feedback.followers=response.data.followers;
-  feedback.following=response.data.following;
-  feedback.stars=response.data.starred_url;
-//   feedback.bgColor='blue';
-  console.log(feedback);
+      //Used the NPM from: https://www.npmjs.com/package/html-pdf
 
-//Used the NPM from: https://www.npmjs.com/package/html-pdf
-
-
-
-
-
-let html = `<!DOCTYPE html>
+      let html = `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -169,22 +173,13 @@ let html = `<!DOCTYPE html>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
   crossorigin="anonymous"></script>
 
-</html>`
+</html>`;
 
-pdf.create(html, options).toFile('./file.pdf', function(err, res) {
-  if (err) return console.log(err);
-  console.log(res); // { filename: '/app/businesscard.pdf' }
-});
-});
-
-
+      pdf.create(html, options).toFile("./file.pdf", function(err, res) {
+        if (err) return console.log(err);
+        console.log(res); // { filename: '/app/businesscard.pdf' }
+      });
+    });
   });
 
-
 //axios module
-
-
-
-
- 
-
