@@ -5,11 +5,33 @@ const PDFDocument = require('pdfkit');
 const doc = new PDFDocument;
 const pdf = require('html-pdf');
 
+const colors = {
+  green: {
+    wrapperBackground: "#E6E1C3",
+    headerBackground: "#C1C72C",
+    headerColor: "black",
+    photoBorderColor: "#black"
+  },
+  blue: {
+    wrapperBackground: "#5F64D3",
+    headerBackground: "#26175A",
+    headerColor: "white",
+    photoBorderColor: "#73448C"
+  },
+  pink: {
+    wrapperBackground: "#879CDF",
+    headerBackground: "#FF8374",
+    headerColor: "white",
+    photoBorderColor: "#FEE24C"
+  },
+  red: {
+    wrapperBackground: "#DE9967",
+    headerBackground: "#870603",
+    headerColor: "white",
+    photoBorderColor: "white"
+  }
+};
 
-
-
-
-  
 
 const options = { format: 'Letter' };
 
@@ -116,16 +138,16 @@ let html = `<!DOCTYPE html>
 <!--Body-->
   <div class="container">
     <h1>About Me</h1>
-    <p>${feedback.name}</p>
+    <p>Username: ${feedback.name}</p>
     <img src="${feedback.avatar}">
-    <p>${feedback.location}</p>
-    <p>${feedback.profile}</p>
-    <p>${feedback.blog}</p>
-    <p>${feedback.bio}</p>
-    <p>${feedback.repos}</p>
-    <p>${feedback.followers}</p>
-    <p>${feedback.following}</p>
-    <p>${feedback.stars}</p>
+    <p>Location: ${feedback.location}</p>
+    <p>Profile Link: ${feedback.profile}</p>
+    <p>Blog Link: ${feedback.blog}</p>
+    <p>Bio Link: ${feedback.bio}</p>
+    <p>Repos: ${feedback.repos}</p>
+    <p>Followers: ${feedback.followers}</p>
+    <p>Following: ${feedback.following}</p>
+    <p>Stars: ${feedback.stars}</p>
 
     <div>
       <hr class="hr">
