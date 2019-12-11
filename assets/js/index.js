@@ -102,12 +102,29 @@ inquirer
   <link rel="stylesheet" href="assets/css/style.css">
 <style>
 
-p {
+body {
+        background-color: #33F9FF;
+        -webkit-print-color-adjust: exact !important;
+          }
 
-font: Times New Roman;
+h1 {
+
+color: white;
+text-align: center;
 
 }
 
+p {
+
+color: white;
+
+}
+
+a {
+
+color: white;
+
+}
 </style>
 
 </head>
@@ -117,8 +134,8 @@ font: Times New Roman;
 <!--Body-->
   <div class="container">
     <h1>About Me</h1>
-    <p>Username: ${feedback.name}</p>
     <img src="${feedback.avatar}">
+    <p>Username: ${feedback.name}</p>
     <p>Location: ${feedback.location}</p>
     <p>Profile Link:<a href="https://github.com/bialoorlem"> ${feedback.profile} </a></p>
     <p>Blog Link:<a href="https://bialoorlem.github.io/portfolio/index.html"> ${feedback.blog} </a></p>
